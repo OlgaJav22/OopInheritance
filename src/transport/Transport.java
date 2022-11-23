@@ -1,22 +1,28 @@
 package transport;
 
-public class Transport {
+public abstract class Transport {
     private String brand;
     private String model;
-    private final int year;
-    private final String country;
+    private  int year;
+    private String country;
     private String colorBody;
     private int speedMax;
 
     public Transport(String brand, String model, int year, String country, String colorBody, int speedMax) {
         setBrand(brand);
         setModel(model);
-        this.year = year;
-        this.country = country;
+        if (year > 0) {
+            this.year = year;
+        }
+        if (country != null && !country.isEmpty() && !country.isBlank()) {
+            this.country = country;
+        }
         setColorBody(colorBody);
         setSpeedMax(speedMax);
     }
 
+
+    public abstract void refill();
 
     public String getBrand() {
         return brand;
@@ -28,7 +34,6 @@ public class Transport {
         } else {
             this.brand = "некорректные данные";
         }
-
     }
 
     public String getModel() {
@@ -41,7 +46,6 @@ public class Transport {
         } else {
             this.model = "некорректные данные";
         }
-
     }
 
     public int getYear() {
@@ -62,7 +66,6 @@ public class Transport {
         } else {
             this.colorBody = "белый";
         }
-
     }
 
     public int getSpeedMax() {
@@ -74,6 +77,12 @@ public class Transport {
             this.speedMax = speedMax;
         }
     }
+    @Override
+    public String toString () {
+        return getBrand() + " " + getModel() + ", год выпуска: " + getYear() + " г. " + ", произведено в: " + getCountry()
+                + ", цвет - " + getColorBody() + ", максимальная скорость: " + getSpeedMax() + " км/ч.";
+    }
+
 
 }
 
