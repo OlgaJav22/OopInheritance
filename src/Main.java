@@ -6,11 +6,11 @@ import transport.Train;
 public class Main {
     public static void main(String[] args) {
 
-        Car lada = new Car("Lada", "Granta", 2015, "России", "желтый", 170);
-        Car audi = new Car("Audi", "A8 50L TDI quattro", 2020, "Германии", "металик", 200);
-        Car bmw = new Car("BMW", "Z8", 2021, "Германии", "черный", 250);
-        Car kia = new Car("Kia", "Sportage", 2018, "Южной Корее", "", 185);
-        Car hyundai = new Car("Hyundai", "Avante", 2016, "Южной Корее", "красный",185);
+        Car lada = new Car("Lada", "Granta", 2015, "России", "желтый", 170, "МКПП", "седан", "а858ми");
+        Car audi = new Car("Audi", "A8 50L TDI quattro", 2020, "Германии", "металик", 200, "АКПП", "кроссовер", "а888аа");
+        Car bmw = new Car("BMW", "Z8", 2021, "Германии", "черный", 250, "АКПП", "", "л745от");
+        Car kia = new Car("Kia", "Sportage", 2018, "Южной Корее", "", 185, "МКПП", "универсал", "в656ав");
+        Car hyundai = new Car("Hyundai", "Avante", 2016, "Южной Корее", "красный", 185,"", "универсал", "");
 
         System.out.println(lada);
         System.out.println(audi);
@@ -30,7 +30,7 @@ public class Main {
         isuzu.refill();
         System.out.println("\n");
 
-        Train lastochka = new Train("Ласточка","В-901", 2011, "России", "синий", 301, "", "",  1500, 1, 20);
+        Train lastochka = new Train("Ласточка", "В-901", 2011, "России", "синий", 301, "", "", 1500, 1, 20);
         Train leningrad = new Train("Ленинград", "D-125", 2019, "России", "", 270, "Ленинградский вокзал", "Ленинград-Пассажирский", 1700, 8, 45);
         lastochka.setNumberOfWagons(11);
         lastochka.setPriceTrip(3500);
@@ -39,7 +39,6 @@ public class Main {
 
         System.out.println(lastochka);
         System.out.println(leningrad);
-
 
     }
 }

@@ -3,7 +3,7 @@ package transport;
 public abstract class Transport {
     private String brand;
     private String model;
-    private  int year;
+    private int year;
     private String country;
     private String colorBody;
     private int speedMax;
@@ -77,8 +77,9 @@ public abstract class Transport {
             this.speedMax = speedMax;
         }
     }
+
     @Override
-    public String toString () {
+    public String toString() {
         return getBrand() + " " + getModel() + ", год выпуска: " + getYear() + " г. " + ", произведено в: " + getCountry()
                 + ", цвет - " + getColorBody() + ", максимальная скорость: " + getSpeedMax() + " км/ч.";
     }

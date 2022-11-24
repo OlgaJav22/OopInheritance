@@ -3,7 +3,6 @@ package transport;
 public class Train extends Transport {
 
 
-
     private int priceTrip;
     private int timeTrip;
     private String departureStation;
@@ -22,9 +21,10 @@ public class Train extends Transport {
 
     }
 
-    public void refill () {
+    public void refill() {
         System.out.println("Заправить дизелем");
     }
+
     public int getPriceTrip() {
         return priceTrip;
     }
@@ -38,6 +38,7 @@ public class Train extends Transport {
     public int getTimeTrip() {
         return timeTrip;
     }
+
     public void setTimeTrip(int timeTrip) {
         if (timeTrip > 0) {
             this.timeTrip = timeTrip;
@@ -45,6 +46,7 @@ public class Train extends Transport {
             this.timeTrip = 0;
         }
     }
+
     public String getDepartureStation() {
         return this.departureStation;
     }
@@ -52,6 +54,8 @@ public class Train extends Transport {
     public void setDepartureStation(String departureStation) {
         if (departureStation != null && !departureStation.isBlank() && !departureStation.isEmpty()) {
             this.departureStation = departureStation;
+        } else {
+            this.departureStation = "некорректные данные";
         }
     }
 
@@ -62,6 +66,8 @@ public class Train extends Transport {
     public void setFinalStop(String finalStop) {
         if (finalStop != null && !finalStop.isEmpty() && !finalStop.isBlank()) {
             this.finalStop = finalStop;
+        } else {
+            this.finalStop = "некорректные данные";
         }
     }
 
@@ -77,7 +83,7 @@ public class Train extends Transport {
         }
     }
 
-    public String toString () {
+    public String toString() {
 
         return super.toString() +
                 " Отходит от " + getDepartureStation() + " и следует до станции " + getFinalStop() +
